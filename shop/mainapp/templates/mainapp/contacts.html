@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <title>Регистрация</title>
-</head>
-<body>
-<div class="container">
-    <header>
-        <div class="logo"><img src="/static/img/kane_logotip.png" alt=""></div>
-        <ul class="menu">
-            <li><a href="/">Главная</a></li>
-            <li><a href="/catalog">Каталог</a></li>
-            <li><a href="/contact">Контакты</a></li>
-        </ul>
-    </header>
-    <div class="content">
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+
+{% block nav %}
+        {% include 'mainapp/includes/inc_main_menu.html'%}
+{% endblock %}
+{% block header %}
+
+{% endblock %}
+{% block content %}
         <div class="contacts">
             <div class="contact-form">
                 <h3>Контакты</h3>
@@ -37,10 +30,4 @@
                 </form>
             </div>
         </div>
-    </div>
-    <hr>
-    <footer><div class="copyright"><p>Все права защищены &copy; <a href="https://github.com/kane52rus/Geek/tree/html/HTML">Andrey
-            Tabunkin</a></p></div></footer>
-</div>
-</body>
-</html>
+{% endblock %}
