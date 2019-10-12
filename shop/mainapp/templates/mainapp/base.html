@@ -24,20 +24,21 @@
     <title>{{ head_title|title }}</title>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     {% block nav %}
     {% endblock %}
-    {% block header %}
-    {% endblock %}
-
-    <div class="content">
+    <div class="container">
+        {% block header %}
+        {% endblock %}
         {% block content %}
         {% endblock %}
     </div>
-    <footer>
-        <div class="copyright">
-            <p>Все права защищены &copy; <a href="https://github.com/kane52rus/">Andrey
-                Tabunkin</a></p>
+    <footer class="container-fluid page-footer font-small">
+        <div class="container">
+            <div class="footer-copyright text-center py-3">
+                    <p>Все права защищены &copy; <a href="https://github.com/kane52rus/">Andrey
+                        Tabunkin</a></p>
+            </div>
         </div>
     </footer>
 </body>
