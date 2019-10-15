@@ -1,0 +1,171 @@
+.navbar,
+footer {
+    background: rgb(0,0,64);
+    margin: 0;
+    padding: 0px;
+}
+.navbar {
+    height: 100px;
+}
+footer {
+    height: 60px;
+    color: white;
+    padding: 0;
+}
+body > .container {
+    background: #e6e6e6;
+}
+
+body > .container-fluid {
+    padding: 0px;
+}
+
+
+/*.container {*/
+/*    width: 100%;*/
+/*    background-color: #f8f8f8;*/
+/*}*/
+/*.catalog {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+/*.item>a>img{*/
+/*    width: 200px;*/
+/*}*/
+/*.item {*/
+/*    width: 350px;*/
+/*    padding: 10px;*/
+/*}*/
+/*.contacts {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+/*.contact-form {*/
+/*    width: 50%;*/
+/*    padding: 10px;*/
+/*}*/
+/*header {*/
+/*    height: 60px;*/
+/*    background-color: #ccc;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+
+/*}*/
+/*.menu{*/
+/*    list-style-type: none;*/
+/*    font-family: "Arial Black";*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    height: 100%;*/
+/*}*/
+/*.menu>li {*/
+/*    width: 100px;*/
+/*}*/
+/*.menu li a {*/
+/*    text-decoration: none;*/
+/*    color: #333;*/
+/*}*/
+/*.menu li a:hover {*/
+/*    color: red;*/
+/*}*/
+/*.logo{*/
+/*    vertical-align: middle;*/
+/*    width: 40%;*/
+
+/*}*/
+/*.logo img {*/
+/*    width: 300px;*/
+/*    padding: 15px;*/
+/*}*/
+
+/*.item-info > h3 {*/
+/*    color: black;*/
+/*    font-size: 18px;*/
+/*    font-weight: 400;*/
+/*    background-color: #eaeaea;*/
+/*}*/
+/*.card {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+/*.card-info {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    padding: 10px;*/
+/*}*/
+/*.card-img {*/
+/*    float: left;*/
+/*    margin-right: 15px;*/
+/*}*/
+/*.card-button {*/
+
+/*}*/
+/*.card-info-small {*/
+/*    font-size: 14px;*/
+/*    font-style: italic;*/
+/*    color: #707070;*/
+/*    line-height: 16px;*/
+/*}*/
+/*.card-info-full {*/
+/*    font-size: 16px;*/
+/*    font-weight: 400;*/
+/*    color: #484343;*/
+/*    line-height: 24px;*/
+/*    text-align: left;*/
+/*}*/
+/*.card-info-stats {*/
+/*    list-style-type: none;*/
+/*}*/
+/*.callback>input{*/
+/*    width: 150px;*/
+/*    color: black;*/
+/*    background-color: #b5b7ba;*/
+/*}*/
+
+
+/*input {*/
+/*    text-transform: capitalize;*/
+/*}*/
+
+/*input[type="email"] {*/
+/*    color: white;*/
+/*    background: black;*/
+/*}*/
+
+/*.item-info>p:first-letter {*/
+/*    font-family: Calibri;*/
+/*    font-size: 30px;*/
+/*}*/
+
+/*.table td {*/
+/*    border: 1px solid red;*/
+/*}*/
+/*.table {*/
+/*    border: 1px solid red;*/
+/*}*/
+
+/*footer {*/
+/*    height: 30px;*/
+/*    background-color: #707070;*/
+/*}*/
+/*.copyright p {*/
+/*    vertical-align: middle;*/
+/*    text-align: center;*/
+/*    padding: 5px;*/
+/*}*/
+/*.card-button > input {*/
+/*    width: 100px;*/
+/*    border-radius: 20px;*/
+/*    background: red;*/
+/*    border: 1px solid darkred;*/
+
+/*}*/
+/*.card-button > input:hover {*/
+/*    width: 100px;*/
+/*    border-radius: 20px;*/
+/*    background: darkred;*/
+
+/*}*/
+/*.card-button {*/
+/*    margin: 10px auto;*/
+/*}*/
