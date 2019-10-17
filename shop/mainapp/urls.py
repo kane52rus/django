@@ -25,9 +25,13 @@ urlpatterns = [
     path('', mainapp.index, name="index"),
     path('contact/', mainapp.contact, name="contact"),
     path('catalog/', mainapp.catalog, name="catalog"),
+    path('catalog/<product.id>/', mainapp.catalog, name='more')
 
 
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )
