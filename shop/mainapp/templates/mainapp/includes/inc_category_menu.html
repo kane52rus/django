@@ -1,0 +1,13 @@
+{% load static %}
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="{% url 'main:catalog' 0 %}" class="list-group-item {% if request.resolver_match.kwargs.pk == '0' %}
+                active
+              {% endif %}">Все</a>
+                {% for category in categories_link %}
+                    <a href="{% url 'main:catalog' category.pk %}" class="list-group-item {% if request.resolver_match.kwargs.pk|add:'0' == link.pk %}
+                  active
+                {% endif %}">{{ category.category_name }}</a>
+                {% endfor %}
+            </div>
+        </div>

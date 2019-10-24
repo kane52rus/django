@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from authapp.forms import ShopUserLoginForm
-from authapp.forms import ShopUserRegisterForm
-from authapp.forms import ShopUserEditForm
+from .forms import ShopUserLoginForm
+from .forms import ShopUserRegisterForm
+from .forms import ShopUserEditForm
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import auth
 from django.urls import reverse
@@ -19,6 +19,9 @@ def user_login(request):
         if user and user.is_active:
             auth.login(request, user)
             return HttpResponseRedirect(reverse('main:index'))
+    else:
+        login_form = ShopUserLoginForm()
+
     content = {
         'title': title,
         'login_form': login_form,

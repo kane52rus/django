@@ -85,3 +85,4 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.author_name.author_name}. {self.product_name} ({self.category_name.category_name})"
+

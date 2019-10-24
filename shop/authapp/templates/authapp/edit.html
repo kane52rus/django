@@ -1,11 +1,13 @@
 {% extends 'authapp/base.html' %}
+{% load crispy_forms_tags %}
 {% load staticfiles %}
 
 
 {% block content %}
     <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
+        <div class="user_avatar"><img class="img-rounded user_photo" src="/media/{{ user.user_photo }}"></div>
         {% csrf_token %}
-        {{ edit_form.as_p }}
+        {{ edit_form|crispy }}
         <input class="form-control" type="submit" value="сохранить">
     </form>
     <button class="btn btn-round form-control last">
@@ -13,5 +15,4 @@
             на главную
         </a>
     </button>
-    <div class="user_avatar"><img src="/media/{{ user.user_photo }}"></div>
 {% endblock %}

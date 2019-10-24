@@ -1,0 +1,70 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+
+{% block nav %}
+    {% include 'mainapp/includes/inc_main_menu.html' %}
+{% endblock %}
+{% block content %}
+    <h1>{{ product.product_name }}</h1>
+    <div class="card">
+        <div class="card-info">
+            <div class="card-img">
+                <a href="/media/{{ product.product_image }}" target="_blank">
+                    <img src="/media/{{ product.product_image }}" class="card-img-top card-img" alt="..."></a>
+            </div>
+            <div class="card-button">
+                <input type="submit" value="Купить">
+            </div>
+        </div>
+        <div class="card-info">
+            <div class="item-info">
+                <h3>Краткое описание</h3>
+                <p class="card-info-small">{{ product.short_description }}</p>
+            </div>
+            <div class="item-info">
+                <h3>Подробное описание:</h3>
+                <p class="card-info-full">{{ product.description }}</p></div>
+            <div class="item-info">
+                <table class="card-info-stats">
+                    <th><h3>Характеристики книги</h3></th>
+                    <tr>
+                        <td><b>Название:</b></td>
+                        <td>{{ product.product_name }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Серия:</b></td>
+                        <td>{{ product.serial }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Тип:</b></td>
+                        <td>{{ product.type }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Издательство:</b></td>
+                        <td>Питер</td>
+                    </tr>
+                    <tr>
+                        <td><b>Язык издания:</b></td>
+                        <td>Русский</td>
+                    </tr>
+                    <tr>
+                        <td><b>Год выпуска:</b></td>
+                        <td>2014</td>
+                    </tr>
+                    <tr>
+                        <td><b>Тип обложки:</b></td>
+                        <td>Мягкая обложка</td>
+                    </tr>
+                    <tr>
+                        <td><b>Вес в упаковке:</b></td>
+                        <td>375г</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</div>
+</body>
+</html>

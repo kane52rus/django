@@ -20,6 +20,28 @@ body > .container-fluid {
     padding: 0px;
 }
 
+.item-img {
+  object-fit: none; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  width: 100%;
+  max-height: 400px;
+  margin-bottom: 1rem;
+}
+
+.card-img {
+    object-fit: scale-down; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+    width: 50%;
+    max-height: 300px;
+    margin-bottom: 1rem;
+}
+
+.user_photo {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
 
 /*.container {*/
 /*    width: 100%;*/
