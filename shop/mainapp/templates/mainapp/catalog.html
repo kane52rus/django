@@ -21,23 +21,23 @@
                             {% if forloop.counter0|divisibleby:3 %}
                                 </div>
                                 <div class="card-deck">{% endif %}
-                            <div class="card">
-                                <img src="/media/{{ product.product_image }}" class="card-img-top card-img" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ product.author_name.author_name }}. {{ product.product_name }}</h5>
-                                    <p>{{ product.short_description }}</p>
-                                    <p>{{ product.price }} руб</p>
-                                    {% if product.balance > 0 and product.balance < 5 %}
-                                        <p>В наличии: мало</p>
-                                    {% elif product.balance > 4 %}
-                                        <p>В наличии: много</p>
-                                    {% else %}
-                                        <p>В наличии: отсутствует</p>
-                                    {% endif %}
-                                    <a href="{% url 'basket:add' product.pk %}" class="btn btn-primary">Купить</a>
-                                    <a href="{% url 'main:product' product.pk %}" class="btn btn-primary">Подробнее</a>
-                                </div>
-                            </div>
+                                    <div class="card">
+                                        <img src="/media/{{ product.product_image }}" class="card-img-top card-img" alt="...">
+                                        <div class="card-body">
+                                            <h6 class="card-title">{{ product.product_name }}</h6>
+                                            <p><b>{{ product.author_name.author_name }}</b></p>
+                                            <p>{{ product.price }} руб</p>
+                                                {% if product.balance > 0 and product.balance < 5 %}
+                                            <p>В наличии: мало</p>
+                                                {% elif product.balance > 4 %}
+                                            <p>В наличии: много</p>
+                                                {% else %}
+                                            <p>В наличии: отсутствует</p>
+                                                {% endif %}
+                                            <a href="{% url 'basket:add' product.pk %}" class="btn btn-primary">Купить</a>
+                                            <a href="{% url 'main:product' product.pk %}" class="btn btn-primary">Подробнее</a>
+                                        </div>
+                                    </div>
                         {% endfor %}
                     {% else %}
                         <h3>Произошка ошибка загрузки данных. Перезагрузите страницу</h3>

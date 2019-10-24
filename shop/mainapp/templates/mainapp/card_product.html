@@ -6,15 +6,26 @@
     {% include 'mainapp/includes/inc_main_menu.html' %}
 {% endblock %}
 {% block content %}
-    <h1>{{ product.product_name }}</h1>
-    <div class="card">
-        <div class="card-info">
+    <h3>{{ product.author_name.author_name }}. {{ product.product_name }}</h3>
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-md-6">
             <div class="card-img">
                 <a href="/media/{{ product.product_image }}" target="_blank">
                     <img src="/media/{{ product.product_image }}" class="card-img-top card-img" alt="..."></a>
             </div>
+        </div>
+        <div class="col-md-6">
             <div class="card-button">
-                <input type="submit" value="Купить">
+                <p>{{ product.price }} руб</p>
+                {% if product.balance > 0 and product.balance < 5 %}
+                <p>В наличии: мало</p>
+                {% elif product.balance > 4 %}
+                <p>В наличии: много</p>
+                {% else %}
+                <p>В наличии: отсутствует</p>
+                {% endif %}
+                <a href="{% url 'basket:add' product.pk %}" class="btn btn-primary">Добавить в корзину</a>
             </div>
         </div>
         <div class="card-info">
@@ -33,6 +44,10 @@
                         <td>{{ product.product_name }}</td>
                     </tr>
                     <tr>
+                        <td><b>Автор:</b></td>
+                        <td>{{ product.author_name.author_name }}</td>
+                    </tr>
+                    <tr>
                         <td><b>Серия:</b></td>
                         <td>{{ product.serial }}</td>
                     </tr>
@@ -41,24 +56,14 @@
                         <td>{{ product.type }}</td>
                     </tr>
                     <tr>
-                        <td><b>Издательство:</b></td>
-                        <td>Питер</td>
-                    </tr>
-                    <tr>
                         <td><b>Язык издания:</b></td>
-                        <td>Русский</td>
+                        <td>{{ product.language }}</td>
                     </tr>
                     <tr>
                         <td><b>Год выпуска:</b></td>
-                        <td>2014</td>
+                        <td>{{ product.issue_year }}</td>
                     </tr>
                     <tr>
-                        <td><b>Тип обложки:</b></td>
-                        <td>Мягкая обложка</td>
-                    </tr>
-                    <tr>
-                        <td><b>Вес в упаковке:</b></td>
-                        <td>375г</td>
                     </tr>
                 </table>
             </div>
