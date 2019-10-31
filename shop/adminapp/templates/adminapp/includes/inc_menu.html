@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-inverse navbar-toggleable-sm">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="{% url 'main:index' %}">На сайт</a>
+      <a class="nav-item nav-link
+                {% if request.resolver_match.url_name == 'users_read' %}
+                active
+                {% endif %}"
+                href="{% url 'myadmin:users_read' %}">Пользователи</a>
+      <a class="nav-item nav-link {% if request.resolver_match.url_name == 'categories' or category.category_name %}
+                active
+              {% endif %}" href="{% url 'myadmin:categories' %}">Категории</a>
+    </div>
+    <div class="navbar-nav">
+        {% if request.resolver_match.url_name == 'users_read' %}
+            <a href="{% url 'myadmin:user_create' %}" class="nav-item btn btn-sm btn-success">Новый пользователь</a>
+        {% elif request.resolver_match.url_name == 'categories' or category.category_name %}
+            <a href="{% url 'myadmin:category_create' %}" class="nav-item btn-sm btn btn-success">Новая категория</a>
+        {% elif request.resolver_match.url_name == 'products' or product.product_name %}
+            <a href="{% url 'myadmin:product_create' category.pk %}" class="nav-item btn-sm btn btn-success"></a>
+        {% endif %}
+    </div>
+
+  </div>
+</nav>
+

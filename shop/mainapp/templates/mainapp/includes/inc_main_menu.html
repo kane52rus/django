@@ -19,6 +19,12 @@
                 <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
                     <a class="nav-link" href="{% url 'main:contact' %}">Контакты</a>
                 </li>
+                {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'myadmin:users_read' %}">Админка</a>
+                    </li>
+                {% endif %}
+
                 {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -38,10 +44,14 @@
                 {% endif %}
                 <a href="#" class="search"></a>
                 <a href="{% url 'basket:view' %}" class="basket">
-                    <span>
-                        {% if basket %} {{ basket|length }} {% endif %}
-                    </span>
+                  <span>
+                    {% if basket %}
+                        {{ basket.0.total_cost|floatformat:0 }} руб
+                        ({{ basket.0.total_quantity }} шт)
+                    {% endif %}
+                  </span>
                 </a>
+
 
         </div>
     </div>

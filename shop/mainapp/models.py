@@ -82,6 +82,10 @@ class Product(models.Model):
         upload_to='products_images',
         blank=True
     )
+    is_active = models.BooleanField(
+        verbose_name='активна',
+        default=True
+    )
 
     def __str__(self):
         return f"{self.author_name.author_name}. {self.product_name} ({self.category_name.category_name})"

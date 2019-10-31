@@ -68,8 +68,30 @@
                 </table>
             </div>
         </div>
-    </div>
-{% endblock %}
+            <div class="card-deck">
+                        {% for hot_product in hot_products %}
+                                <div class="card-deck">
+                                    <div class="card">
+                                        <img src="/media/{{ hot_product.product_image }}" class="card-img-top card-img" alt="...">
+                                        <div class="card-body">
+                                            <h6 class="card-title">{{ hot_product.product_name }}</h6>
+                                            <p><b>{{ hot_product.author_name.author_name }}</b></p>
+                                            <p>{{ hot_product.price }} руб</p>
+                                                {% if hot_product.balance > 0 and hot_product.balance < 5 %}
+                                            <p>В наличии: мало</p>
+                                                {% elif hot_product.balance > 4 %}
+                                            <p>В наличии: много</p>
+                                                {% else %}
+                                            <p>В наличии: отсутствует</p>
+                                                {% endif %}
+                                            <a href="{% url 'basket:add' hot_product.pk %}" class="btn btn-primary">Купить</a>
+                                            <a href="{% url 'main:product' catalog.pk %}" class="btn btn-primary">Подробнее</a>
+                                        </div>
+                                    </div>
+                        {% endfor %}
+                </div>
+            </div>
+        {% endblock %}
 </div>
 </body>
 </html>

@@ -1,0 +1,16 @@
+{% extends 'authapp/base.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block content %}
+  <form class="form-horizontal" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ update_form|crispy }}
+    <input class="form-control" type="submit" value="сохранить">
+  </form>
+  <button class="btn btn-round form-control last">
+    <a href="{% url 'myadmin:users_read' %}">
+      к списку пользователей
+    </a>
+  </button>
+{% endblock %}

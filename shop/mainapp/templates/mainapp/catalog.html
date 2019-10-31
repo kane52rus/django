@@ -9,9 +9,29 @@
 
 {% endblock %}
 {% block content %}
-    <h2 class="mt-2 text-center">{{ head_title|upper }}: {{ category.category_name|title }}</h2>
+    <h2 class="mt-2 text-center">Горячее предложение</h2>
     <hr class="mt-0 mb-4">
     <div class="container content">
+        <div class="card-deck">
+            <div class="card">
+                <img src="/media/{{ hot_product.product_image }}" class="card-img-top card-img" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">{{ hot_product.product_name }}</h6>
+                    <p><b>{{ hot_product.author_name.author_name }}</b></p>
+                    <p>{{ hot_product.price }} руб</p>
+                    {% if hot_product.balance > 0 and hot_product.balance < 5 %}
+                        <p>В наличии: мало</p>
+                    {% elif hot_product.balance > 4 %}
+                        <p>В наличии: много</p>
+                    {% else %}
+                        <p>В наличии: отсутствует</p>
+                    {% endif %}
+                    <a href="{% url 'basket:add' hot_product.pk %}" class="btn btn-primary">Купить</a>
+                    <a href="{% url 'main:product' hot_product.pk %}" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <h2 class="mt-2 text-center">{{ head_title|upper }}: {{ category.category_name|title }}</h2>
         <div class="row">
             {% include 'mainapp/includes/inc_category_menu.html' %}
             <div class="col-md-9">

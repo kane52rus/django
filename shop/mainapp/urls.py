@@ -23,7 +23,7 @@ urlpatterns = [
     path('', mainapp.index, name="index"),
     path('contact/', mainapp.contact, name="contact"),
     path('catalog/<int:pk>/', mainapp.catalog, name='catalog'),
-    path('catalog/product/<int:pk>', mainapp.card, name="product")
+    path('catalog/product/<int:pk>', mainapp.card, name="product"),
 
 
 ]

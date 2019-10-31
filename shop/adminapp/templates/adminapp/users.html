@@ -1,0 +1,62 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+        {% include 'adminapp/includes/inc_menu.html' %}
+        {% for object in objects %}
+            <div class="row">
+                <div class="col-md-12 user_record {% if not object.is_active %}disabled{% endif %}">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="user-img" src="/media/{{ object.user_photo|default:'users_photo/default.png' }}"
+                                 alt="{{ object.username }}">
+                        </div>
+                        <div class="col-md-3">
+                            <div>
+                                {% if object.is_superuser %}
+                                    <p>администратор</p>
+                                {% else %}
+                                    <p>пользователь</p>
+                                {% endif %}
+                            </div>
+                            <div class="user_name">
+                                <p><strong>{{ object.username }}</strong></p>
+                                <p>
+                                    {% if object.first_name %}
+                                        <b>{{ object.first_name|title }}</b>
+                                        {% if object.last_name %}
+                                            <p>{{ object.last_name|title }}</p>
+                                        {% endif %}
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="user_age">
+                                <p>age: {{ object.age }}</p>
+                            </div>
+                            <div class="user_email">
+                                <p>email: {{ object.email }}</p>
+                            </div>
+                            <div class="user_lastlogin">
+                                <p>logged: {{ object.last_login }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div>
+                                <a class="btn btn-primary" href={% url 'myadmin:user_update' object.pk %}>
+                                    редактировать
+                                </a>
+                            </div>
+                            <div>
+                                <a class="btn btn-danger {% if not object.is_active %}disabled{% endif %}" href={% url 'myadmin:user_delete' object.pk %}>
+                                    удалить
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+{% endblock %}
